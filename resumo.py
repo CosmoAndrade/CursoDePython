@@ -1,21 +1,17 @@
-numero_secreto = 42
-total_de_tentativas = 3
+print('******************************************')
+print('***Bem	vindo	ao	jogo	da	Forca!***')
+print('******************************************')
 
-for rodada in range(1, total_de_tentativas):
-    print('Tentativa {} de {}'.format(rodada, total_de_tentativas))
-    chute = int(input('Digite o seu número: '))
-    print('Você digitou: ', chute)
+palavra_secreta = 'banana'
+acertou = False
+enforcou = False
 
-    acertou = numero_secreto == chute
-    maior = chute > numero_secreto
-    menor = chute < numero_secreto
+while(not acertou and not enforcou):
+    chute = input('Qual letra?')
+    posicao = 0
+    for letra in palavra_secreta:
+        if (chute == letra):
+            print('Encontrei	a	letra	{}	na	posição	{}'.format(letra,	posicao))
+        posicao = posicao + 1
+        print('Jogando...')
 
-    if (acertou):
-        print('Você acertou!')
-        break
-    elif (maior):
-        print('Você errou! O seu chute foi maior que o número secreto')
-    elif (menor):
-        print('Você errou! O seu chute foi menor que o número secreto')
-
-print('Fim do jogo!')
